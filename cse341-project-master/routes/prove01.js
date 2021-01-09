@@ -11,7 +11,9 @@ router.post('/', (req, res, next) => {
     console.log(req.body);
     let data = {
         firstName: req.body.firstName,
-        lastName: req.body.lastName
+        lastName: req.body.lastName,
+        age: req.body.age,
+        major: req.body.major
     }
 
     
@@ -22,7 +24,7 @@ router.post('/', (req, res, next) => {
 
 
     // res.redirect('/?display=' + data); //FIXME: Can't pass data to other view & display it
-    res.render('pages/display.ejs', {first:  data.firstName, last: data.lastName });
+    res.render('pages/display.ejs', {first:  data.firstName, last: data.lastName, age: data.age, major: data.major });
 
     // var string = encodeURIComponent(data);
     // res.redirect('/?display=' + req.body);
